@@ -10,7 +10,6 @@ header{
 }
 
 header div:first-child{
-  border:1px solid red;
   align-self: center;
 }
 

@@ -1,0 +1,35 @@
+main.container .new-tweet form{
+  display: flex;
+  flex-direction: column;
+}
+
+.new-tweet form label{
+  font-weight: 600;
+}
+
+.new-tweet textarea#tweet-text{
+  border: none;
+  overflow: auto;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  resize: none;
+  background-color: transparent;
+  border-bottom: 5px solid black;
+  line-height: 1;
+  margin-top: .5em;
+}
+
+.new-tweet form > div{
+  display: flex;
+  justify-content: space-between;
+  font-family: "Bungee",sans-serif;
+  margin-top: .7em;
+}
+
+.new-tweet form > div button{
+  background-color: #4056A1;
+  color: white;
+  padding: 0 .5em;
+}
