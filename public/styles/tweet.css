@@ -30,7 +30,8 @@ article.tweet header > div{
 }
 
 article.tweet header div > img{
-  width: 30%;
+  width: 40px;
+  margin-right: .5em;
 }
 
 article.tweet header > span{
