@@ -7,7 +7,7 @@ main.container .new-tweet form{
   font-weight: 600;
 }
 
-.new-tweet textarea#tweet-text{
+.tweet-text{
   border: none;
   overflow: auto;
   outline: none;

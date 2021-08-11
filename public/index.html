@@ -27,6 +27,9 @@
     <!-- Tweet Form CSS -->
     <link rel="stylesheet" href="/styles/new-tweet.css">
 
+    <!-- Tweet Post CSS -->
+    <link rel="stylesheet" href="/styles/tweet.css">
+
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -60,13 +63,37 @@
         <h2>Compose Tweet</h2>
         <form action="/tweets/" method="POST">
           <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
+          <textarea name="text" class="tweet-text"></textarea>
           <div>
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>
+      <article class="tweet">
+        <header>
+          <div>
+            <img src='https://i.imgur.com/73hZDYK.png'/>
+            <span>Newton</span>
+          </div>
+          <span>@SirIssac</span>
+        </header>
+          <textarea class="tweet-text">If I have seen further it's by standing on the shoulders of giants</textarea>
+        <footer>
+          <span>10 days ago</span>
+          <div>
+            <button class="icons">
+              <i class="fas fa-flag"></i>
+            </button>
+            <button>
+              <i class="fas fa-retweet"></i>
+            </button>
+            <button>
+              <i class="fas fa-heart"></i>
+            </button>
+          </div>
+        </footer>
+      </article>
     </main>
   </body>
 </html>
