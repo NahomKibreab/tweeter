@@ -76,5 +76,8 @@ $(() => {
   // Listener for Submit Event
   $("form").submit(function (event) {
     event.preventDefault();
+    $.post("/tweets/", $(this).serialize(), () => {
+      console.log("Successfully post tweet");
+    });
   });
 });
