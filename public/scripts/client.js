@@ -58,5 +58,6 @@ $(() => {
     $.post("/tweets/", $(this).serialize(), () => {
       console.log("Successfully post tweet");
     });
+    console.log($(this).find("textarea").val(""));
   });
 });
