@@ -33,3 +33,7 @@ main.container .new-tweet form{
   color: white;
   padding: 0 .5em;
 }
+
+.counter.negative{
+  color: red;
+}
