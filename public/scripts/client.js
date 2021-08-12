@@ -65,6 +65,16 @@ $(() => {
     });
   };
 
+  // Create element for error message
+  const $error = $(`
+    <div class="error">
+    <i class="fas fa-exclamation-triangle"></i>
+    <span>hello</span>
+    <i class="fas fa-exclamation-triangle"></i>
+    </div>
+  `).hide();
+  $("form").prepend($error);
+
   // Listener for Submit Event
   $("form").submit(function (event) {
     event.preventDefault();
@@ -73,10 +83,16 @@ $(() => {
     const textLength = $(this).find("textarea").val().length;
     if (textLength <= 0 || textLength > 140) {
       if (textLength >= 140) {
-        return alert("Tweet content is too long ");
+        $error
+          .find("span")
+          .text("Tweet content is too long! Only 140 characters allowed!");
+        return $error.slideDown().show();
       }
-      return alert("Tweet is not present.");
+      $error.find("span").text("Empty Tweet is not allowed!");
+      return $error.slideDown().show();
     }
+    $error.hide();
+
     $.post("/tweets/", $(this).serialize(), () => {
       fetch();
     });
