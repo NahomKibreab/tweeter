@@ -8,17 +8,24 @@ $(() => {
   // Test / driver code (temporary). Eventually will get this from the server.
   // Fake data taken from initial-tweets.json
 
+  // protecting from XSS attack
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const createTweetElement = (data) => {
     const $tweet = $(`
     <article class="tweet">
         <header>
           <div>
-            <img src='${data.user.avatars}'/>
-            <span>${data.user.name}</span>
+            <img src='${escape(data.user.avatars)}'/>
+            <span>${escape(data.user.name)}</span>
           </div>
-          <span>${data.user.handle}</span>
+          <span>${escape(data.user.handle)}</span>
         </header>
-          <textarea class="tweet-text">${data.content.text}</textarea>
+          <textarea class="tweet-text">${escape(data.content.text)}</textarea>
         <footer>
           <span>${timeago.format(data.created_at)}</span>
           <div>
@@ -35,6 +42,7 @@ $(() => {
         </footer>
       </article>
     `);
+
     return $tweet;
   };
 
@@ -45,6 +53,7 @@ $(() => {
     const $tweetContainer = $("#tweets-container");
     $tweetContainer.empty();
     for (const tweet of tweets) {
+      // $tweetContainer.prepend(createTweetElement(tweet));
       $tweetContainer.prepend(createTweetElement(tweet));
     }
   };
