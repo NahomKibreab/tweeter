@@ -55,9 +55,15 @@ $(() => {
   // Listener for Submit Event
   $("form").submit(function (event) {
     event.preventDefault();
-    $.post("/tweets/", $(this).serialize(), () => {
-      console.log("Successfully post tweet");
-    });
-    console.log($(this).find("textarea").val(""));
+    // check if the textarea is not empty or not exceeded 140 characters
+    const textLength = $(this).find("textarea").val().length;
+    if (textLength <= 0 || textLength > 140) {
+      if (textLength >= 140) {
+        return alert("Tweet content is too long ");
+      }
+      return alert("Tweet is not present.");
+    }
+    $.post("/tweets/", $(this).serialize());
+    $(this).find("textarea").val("");
   });
 });
