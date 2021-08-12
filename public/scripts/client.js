@@ -42,19 +42,24 @@ $(() => {
     // loops through tweets
     // calls createTweetElement for each tweet
     // takes return value and appends it to the tweets container
+    const $tweetContainer = $("#tweets-container");
+    $tweetContainer.empty();
     for (const tweet of tweets) {
-      $("#tweets-container").append(createTweetElement(tweet));
+      $tweetContainer.prepend(createTweetElement(tweet));
     }
   };
 
   // request json file as a return value
-  $.getJSON("/tweets", (data) => {
-    renderTweets(data);
-  });
+  const fetch = () => {
+    $.getJSON("/tweets", (data) => {
+      renderTweets(data);
+    });
+  };
 
   // Listener for Submit Event
   $("form").submit(function (event) {
     event.preventDefault();
+
     // check if the textarea is not empty or not exceeded 140 characters
     const textLength = $(this).find("textarea").val().length;
     if (textLength <= 0 || textLength > 140) {
@@ -63,7 +68,12 @@ $(() => {
       }
       return alert("Tweet is not present.");
     }
-    $.post("/tweets/", $(this).serialize());
+    $.post("/tweets/", $(this).serialize(), () => {
+      fetch();
+    });
     $(this).find("textarea").val("");
   });
+
+  // initial loading the tweets
+  fetch();
 });
