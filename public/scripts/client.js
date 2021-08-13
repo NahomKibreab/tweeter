@@ -15,6 +15,7 @@ $(() => {
     return div.innerHTML;
   };
 
+  // creating new tweet list
   const createTweetElement = (data) => {
     const $tweet = $(`
     <article class="tweet">
@@ -25,7 +26,9 @@ $(() => {
           </div>
           <span>${escape(data.user.handle)}</span>
         </header>
-          <textarea class="tweet-text">${escape(data.content.text)}</textarea>
+          <textarea class="tweet-text" disabled>${escape(
+            data.content.text
+          )}</textarea>
         <footer>
           <span>${timeago.format(data.created_at)}</span>
           <div>
