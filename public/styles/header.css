@@ -1,4 +1,4 @@
-header{
+header {
   margin-top: 120px;
   height: 400px;
   width: 100%;
@@ -8,22 +8,16 @@ header{
   background-color: #b86e00;
   background-image: url("/images/back-pattern.png");
 }
-
-header div:first-child{
+header div:first-child {
   align-self: center;
-  padding-top: .5em;
+  padding-top: 0.5em;
 }
-
-header div:nth-child(3){
-  color:white;
+header div:nth-child(3) {
+  color: white;
 }
-
-header div:nth-child(3) h2{
+header div:nth-child(3) h2 {
   font-weight: 300;
 }
-
-header div:nth-child(3) h2 span{
+header div:nth-child(3) h2 span {
   font-weight: 600;
 }
-
-
