@@ -1,8 +1,16 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone.
+Tweeter is a simple, single-page Twitter clone. You can tweet 140 maximum characters in one post.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
+## Final Product
+
+!["Screenshot of register page"](/docs/urls-page.png)
+
+!["Screenshot of URLs page"](/docs/register-page.png)
+
+This project built using :
+- Front-end: HTML, CSS, SASS, JS, jQuery and AJAX
+- Back-end: Node, Express and MongoDB
 
 ## Getting Started
 
@@ -15,3 +23,6 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+### Contacts:
+Developed by Nahom Mehanzel. You can find me on [LinkedIn](https://www.linkedin.com/in/nahom-mehanzel/) or [Twitter](https://twitter.com/NahomKibreab).
