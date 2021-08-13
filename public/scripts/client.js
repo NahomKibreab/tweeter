@@ -9,7 +9,7 @@ $(() => {
   // Fake data taken from initial-tweets.json
 
   // protecting from XSS attack
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -27,8 +27,8 @@ $(() => {
           <span>${escape(data.user.handle)}</span>
         </header>
           <textarea class="tweet-text" disabled>${escape(
-            data.content.text
-          )}</textarea>
+    data.content.text
+  )}</textarea>
         <footer>
           <span>${timeago.format(data.created_at)}</span>
           <div>
@@ -49,7 +49,7 @@ $(() => {
     return $tweet;
   };
 
-  const renderTweets = function (tweets) {
+  const renderTweets = function(tweets) {
     // loops through tweets
     // calls createTweetElement for each tweet
     // takes return value and appends it to the tweets container
@@ -79,7 +79,7 @@ $(() => {
   $("form").prepend($error);
 
   // Listener for Submit Event
-  $("form").submit(function (event) {
+  $("form").submit(function(event) {
     event.preventDefault();
 
     // check if the textarea is not empty or not exceeded 140 characters
