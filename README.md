@@ -4,9 +4,11 @@ Tweeter is a simple, single-page Twitter clone. You can tweet 140 maximum charac
 
 ## Final Product
 
-!["Screenshot of register page"](/docs/urls-page.png)
+!["Screenshot of desktop size"](https://user-images.githubusercontent.com/14014497/129321059-90dc4a43-8671-411b-8334-f57dec6cf611.png)
 
-!["Screenshot of URLs page"](/docs/register-page.png)
+
+!["Screenshot of table size"](https://user-images.githubusercontent.com/14014497/129321173-67428bad-fbb6-4dfe-899a-60f084eab92b.png)
+
 
 This project built using :
 - Front-end: HTML, CSS, SASS, JS, jQuery and AJAX
