@@ -97,6 +97,7 @@ $(() => {
       fetch();
     });
     $(this).find("textarea").val("");
+    $(this).find(".counter").val(140);
   });
 
   // initial loading the tweets
